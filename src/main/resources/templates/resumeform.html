@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/process}"
+      th:object="${resume}"
+      method="post">
+    <input type="hidden" th:field="*{id}" />
+    Name :<input type="text" th:field="*{name}" />
+    <span th:if="${#fields.hasErrors('name')}"
+          th:errors="*{name}"></span><br />
+    Email Address :<input type="text" th:field="*{emailAddress}" />
+    <span th:if="${#fields.hasErrors('emailAddress')}"
+          th:errors="*{emailAddress}"></span><br />
+    Education :<input type="text" th:field="*{education}" />
+    <span th:if="${#fields.hasErrors('education')}"
+          th:errors="*{education}"></span><br />
+    Work Experience :<input type="text" th:field="*{workExperience}" />
+    <span th:if="${#fields.hasErrors('workExperience')}"
+          th:errors="*{workExperience}"></span><br />
+    Skill :<input type="text" th:field="*{skill}" />
+    <span th:if="${#fields.hasErrors('skill')}"
+          th:errors="*{skill}"></span><br />
+    <input type="submit" value="Submit" />
+</form>
+
+</body>
+</html>
